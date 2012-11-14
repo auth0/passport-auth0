@@ -1,7 +1,7 @@
 {
-  "name": "auth0-client",
+  "name": "passport-auth0",
   "version": "0.0.1",
-  "description": "Node.js client for the auth0 platform",
+  "description": "Auth0 platform authentication strategy for Passport.js",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha"
