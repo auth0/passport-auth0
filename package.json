@@ -1,0 +1,20 @@
+{
+  "name": "auth0-client",
+  "version": "0.0.1",
+  "description": "Node.js client for the auth0 platform",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "devDependencies": {
+    "mocha": "~1.7.0",
+    "should": "~1.2.1"
+  },
+  "dependencies": {
+    "passport-oauth": "~0.1.12",
+    "xtend": "~1.0.3"
+  }
+}
