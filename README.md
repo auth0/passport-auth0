@@ -8,6 +8,7 @@ This is the auth0 authentication strategy for Passport.js.
 
 ~~~js
 passport.use(new Auth10Strategy({
+   namespace:    'your-namespace.auth0.com',
    clientID: 	 'your-client-id',
    clientSecret: 'your-client-secret',
    callbackURL:  '/callback'
