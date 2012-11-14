@@ -2,7 +2,7 @@ This is the auth0 authentication strategy for Passport.js.
 
 ## Instalation
 
-	npm install http://bit.ly/passport-auth0
+	npm install http://bit.ly/passportauth0
 
 ## Configuration
 
