@@ -24,7 +24,7 @@ passport.use(new Auth10Strategy({
 
 ~~~js
 app.get('/callback', 
-  passport.authenticate('auth10', { failureRedirect: '/login', connection: 'connection1' }), 
+  passport.authenticate('auth10', { failureRedirect: '/login' }), 
   function(req, res) {
     if (!req.user) {
       throw new Error('user null');
