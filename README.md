@@ -38,3 +38,15 @@ app.get('/login',
   res.redirect("/");
 });
 ~~~
+
+## Logout
+
+In order to logout we need to do some extra redirection, so it is a little bit different than with vanilla passport.js
+
+~~~js
+app.get('/logout', function(req, res){
+  req.logout(res, 'http://myapplication.com');
+});
+~~~
+
+The first parameter is the response and the second parameter is the destination url.
