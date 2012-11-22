@@ -38,3 +38,12 @@ app.get('/login',
   res.redirect("/");
 });
 ~~~
+
+
+Get a list of connections as follows:
+
+~~~js
+strategy.getConnectionList(function (err, connections){
+  //.....
+});
+~~~
