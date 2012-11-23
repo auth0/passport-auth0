@@ -103,3 +103,7 @@ strategy.createConnection(myNewConnection, function (err) {
   //.....
 });
 ~~~
+
+## Complete example
+
+A complete example of using this library [here](http://github.com/qraftlabs/passport-auth0).
