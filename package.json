@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "passport-oauth": "~0.1.12",
-    "xtend": "~1.0.3"
+    "xtend": "~1.0.3",
+    "request": "~2.12.0"
   }
 }
