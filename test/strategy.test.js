@@ -13,6 +13,23 @@ describe('auth0 strategy', function () {
     );
   });
 
+  it('can initialize with urls', function () {
+    var strategy = new Auth10Strategy({
+      authorizationURL: 'https://localhost:3000/authorize',
+      tokenURL:         'https://localhost:3000/oauth/token',
+      userInfoURL:      'https://localhost:3000/userinfo',
+      apiUrl:           'https://localhost:3000/api',
+      clientID:     'testid',
+      clientSecret: 'testsecret',
+      callbackURL:  '/callback'
+      }, function() {}
+    );
+
+    strategy.options.authorizationURL
+      .should.eql('https://localhost:3000/authorize');
+  });
+
+
   it('authorizationURL should have the namespace', function () {
     this.strategy.options
       .authorizationURL.should.eql('https://jj.auth0.com/authorize');
