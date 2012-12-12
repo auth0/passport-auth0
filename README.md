@@ -2,7 +2,7 @@ This is the auth0 authentication strategy for Passport.js.
 
 ## Instalation
 
-	npm install http://bit.ly/passportauth0
+	npm install passport-auth0
 
 ## Configuration
 
@@ -47,62 +47,7 @@ app.get('/login',
 
 ## API access 
 
-
-You can use auth0 API to manage your connections in the same way you do in the [dashboard](http://app.auth0.com).
-
-Get a list of connections as follows:
-
-~~~js
-strategy.getConnections(function (err, connections){
-  //.....
-});
-~~~
-
-Create a google connection as follows:
-
-~~~js
-var myNewConnection =  {
-    "name": "a-new-connection",
-    "strategy": "google-oauth2",
-    "client_id": "aaa",
-    "options": {
-      "client_secret": "aadsadsadsa",
-      "email": true,
-      "profile": true,
-      "contacts": false,
-      "blogger": false,
-      "calendar": false,
-      "gmail": false,
-      "google_plus": false,
-      "orkut": false,
-      "picasa_web": false,
-      "tasks": false,
-      "youtube": false,
-      "adsense_management": false,
-      "google_affiliate_network": false,
-      "analytics": false,
-      "google_books": false,
-      "google_cloud_storage": false,
-      "content_api_for_shopping": false,
-      "chrome_web_store": false,
-      "document_list": false,
-      "google_drive": false,
-      "google_drive_files": false,
-      "latitude_best": false,
-      "latitude_city": false,
-      "moderator": false,
-      "sites": false,
-      "spreadsheets": false,
-      "url_shortener": false,
-      "webmaster_tools": false
-    },
-    "status": 0
-  };
-
-strategy.createConnection(myNewConnection, function (err) {
-  //.....
-});
-~~~
+If you want to get a list of connections or users from auth0, use the [auth0 module](https://github.com/qraftlabs/node-auth0).
 
 ## Complete example
 
