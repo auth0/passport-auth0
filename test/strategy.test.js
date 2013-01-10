@@ -4,7 +4,7 @@ var assert = require('assert');
 describe('auth0 strategy', function () {
   before(function () {
     this.strategy = new Auth10Strategy({
-       namespace:    'jj.auth0.com', 
+       domain:       'jj.auth0.com', 
        clientID:     'testid',
        clientSecret: 'testsecret',
        callbackURL:  '/callback'
@@ -13,17 +13,17 @@ describe('auth0 strategy', function () {
     );
   });
 
-  it('authorizationURL should have the namespace', function () {
+  it('authorizationURL should have the domain', function () {
     this.strategy.options
       .authorizationURL.should.eql('https://jj.auth0.com/authorize');
   });
   
-  it('tokenURL should have the namespace', function () {
+  it('tokenURL should have the domain', function () {
     this.strategy.options
       .tokenURL.should.eql('https://jj.auth0.com/oauth/token');
   });
   
-  it('userInfoURL should have the namespace', function () {
+  it('userInfoURL should have the domain', function () {
     this.strategy.options
       .userInfoURL.should.eql('https://jj.auth0.com/userinfo');
   });
