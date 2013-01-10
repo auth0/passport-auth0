@@ -6,12 +6,14 @@ This is the auth0 authentication strategy for Passport.js.
 
 ## Configuration
 
+Take your credentials from the [settings](https://app.auth0.com/#/settings) section in the dashboard and initialize the strategy as follows:
+
 ~~~js
 var Auth0Strategy = require('passport-auth0'),
     passport = require('passport');
 
 var strategy = new Auth0Strategy({
-   namespace:    'your-namespace.auth0.com',
+   domain:       'your-domain.auth0.com',
    clientID:     'your-client-id',
    clientSecret: 'your-client-secret',
    callbackURL:  '/callback'
@@ -49,6 +51,16 @@ app.get('/login',
 
 If you want to get a list of connections or users from auth0, use the [auth0 module](https://github.com/qraftlabs/node-auth0).
 
+
 ## Complete example
 
 A complete example of using this library [here](http://github.com/qraftlabs/passport-auth0).
+
+
+## Documentation
+
+For more information about [auth0](http://auth0..com) contact our [documentation page](http://docs.auth0.com/).
+
+## License
+
+This client library is MIT licensed.
