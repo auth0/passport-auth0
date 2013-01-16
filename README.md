@@ -61,12 +61,12 @@ app.get('/login/google',
 
 ## API access 
 
-If you want to get a list of connections or users from auth0, use the [auth0 module](https://github.com/qraftlabs/node-auth0).
+If you want to get a list of connections or users from auth0, use the [auth0 module](https://github.com/auth0/node-auth0).
 
 
 ## Complete example
 
-A complete example of using this library [here](http://github.com/qraftlabs/passport-auth0).
+A complete example of using this library [here](http://github.com/auth0/passport-auth0).
 
 
 ## Documentation
