@@ -41,10 +41,22 @@ app.get('/callback',
 );
 
 app.get('/login', 
-  passport.authenticate('auth0', {connection: 'connection1'}), function (req, res) {
+  passport.authenticate('auth0', {}), function (req, res) {
   res.redirect("/");
 });
 ~~~
+
+This way when you go to ```/login``` you will get redirect to auth0, to a page where you can select the identity provider.
+
+If you want to force to force an identity provider you can use:
+
+~~~javascript
+app.get('/login/google', 
+  passport.authenticate('auth0', {connection: 'google-oauth2'}), function (req, res) {
+  res.redirect("/");
+});
+~~~
+
 
 
 ## API access 
