@@ -41,15 +41,13 @@ describe('auth0 strategy', function () {
     it('when there is an error querystring propagate', function (done) {
       
       this.strategy.fail = function (challenge, status) {
-        challenge.should.eql('there was an error with the domain bla');
-        status.should.eql('domain_mismatch');
+        challenge.should.eql('domain_mismatch');
         done();
       };
 
       this.strategy.authenticate({
         query: {
-          error: 'domain_mismatch',
-          error_description: 'there was an error with the domain bla'
+          error: 'domain_mismatch'
         }
       });
     });
