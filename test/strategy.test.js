@@ -9,7 +9,7 @@ describe('auth0 strategy', function () {
        clientSecret: 'testsecret',
        callbackURL:  '/callback'
       },
-      function(accessToken, refreshToken, profile, done) {}
+      function(accessToken, idToken, profile, done) {}
     );
   });
 
