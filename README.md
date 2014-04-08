@@ -18,7 +18,7 @@ var strategy = new Auth0Strategy({
    clientSecret: 'your-client-secret',
    callbackURL:  '/callback'
   },
-  function(accessToken, refreshToken, profile, done) {
+  function(accessToken, idToken, profile, done) {
     //do something here with the profile
     return done(null, profile);
   }
