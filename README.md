@@ -1,6 +1,6 @@
 This is the auth0 authentication strategy for Passport.js.
 
-## Instalation
+## Installation
 
 	npm install passport-auth0
 
