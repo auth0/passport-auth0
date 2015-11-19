@@ -48,9 +48,9 @@ app.get('/login',
 });
 ~~~
 
-This way when you go to ```/login``` you will get redirect to auth0, to a page where you can select the identity provider.
+This way when you go to ```/login``` you will get redirected to auth0, to a page where you can select the identity provider.
 
-If you want to force to force an identity provider you can use:
+If you want to force an identity provider you can use:
 
 ~~~javascript
 app.get('/login/google', 
@@ -77,7 +77,7 @@ For more information about [auth0](http://auth0.com) contact our [documentation 
 
 ## Issue Reporting
 
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
+If you have found a bug or if you have a feature request, please report them at this repository's issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
 
 ## License
 
