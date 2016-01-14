@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git://github.com/auth0/passport-auth0"
   },
-  "author": "",
-  "license": "BSD",
+  "author": "Auth0",
+  "license": "MIT",
   "devDependencies": {
     "mocha": "^2.2.5",
     "should": "^7.1.0"
