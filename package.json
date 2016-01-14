@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git://github.com/auth0/passport-auth0"
   },
-  "author": "Auth0",
+  "author": {
+    "name": "José F. Romaniello",
+    "email": "jfromaniello@gmail.com",
+    "url": "http://joseoncode.com"
+  },
   "license": "MIT",
   "devDependencies": {
     "mocha": "^2.2.5",
