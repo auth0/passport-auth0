@@ -4,6 +4,10 @@
 
 This is the auth0 authentication strategy for Passport.js.
 
+## Passport.js
+
+[Passport](http://passportjs.org/) is authentication middleware for Node.js. Passport can be unobtrusively dropped in to any Express-based web application.
+
 ## Installation
 
 	npm install passport-auth0
