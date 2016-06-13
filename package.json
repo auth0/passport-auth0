@@ -1,6 +1,6 @@
 {
   "name": "passport-auth0",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Auth0 platform authentication strategy for Passport.js",
   "main": "lib/index.js",
   "scripts": {
