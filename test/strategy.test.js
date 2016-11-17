@@ -7,7 +7,8 @@ describe('auth0 strategy', function () {
        domain:       'jj.auth0.com', 
        clientID:     'testid',
        clientSecret: 'testsecret',
-       callbackURL:  '/callback'
+       callbackURL:  '/callback',
+       scope: ['openid', 'email']
       },
       function(accessToken, idToken, profile, done) {}
     );
@@ -26,6 +27,11 @@ describe('auth0 strategy', function () {
   it('userInfoURL should have the domain', function () {
     this.strategy.options
       .userInfoURL.should.eql('https://jj.auth0.com/userinfo');
+  });
+  
+  it('scope should be flattened to', function () {
+    this.strategy.options
+      .scope.should.eql('openid email');
   });
 
   describe('authorizationParams', function () {
