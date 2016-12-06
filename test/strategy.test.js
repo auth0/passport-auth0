@@ -1,5 +1,6 @@
 var Auth10Strategy = require('../lib');
 var assert = require('assert');
+var should = require('should');
 
 describe('auth0 strategy', function () {
   before(function () {
@@ -33,6 +34,41 @@ describe('auth0 strategy', function () {
     it('should map the connection field', function () {
       var extraParams = this.strategy.authorizationParams({connection: 'foo'});
       extraParams.connection.should.eql('foo');
+    });
+
+    it('should not map the connection field if its not a string', function () {
+      var extraParams = this.strategy.authorizationParams({connection: 42});
+      should.not.exist(extraParams.connection);
+    });
+
+    it('should map the audience field', function () {
+      var extraParams = this.strategy.authorizationParams({audience: 'foo'});
+      extraParams.audience.should.eql('foo');
+    });
+
+    it('should not map the audience field if its not a string', function () {
+      var extraParams = this.strategy.authorizationParams({audience: 42});
+      should.not.exist(extraParams.audience);
+    });
+
+    it('should map the prompt field', function () {
+      var extraParams = this.strategy.authorizationParams({prompt: 'foo'});
+      extraParams.prompt.should.eql('foo');
+    });
+
+    it('should not map the prompt field if its not a string', function () {
+      var extraParams = this.strategy.authorizationParams({prompt: 42});
+      should.not.exist(extraParams.prompt);
+    });
+
+    it("shouldn't map any fields if non were specified", function () {
+      var extraParams = this.strategy.authorizationParams({});
+      Object.keys(extraParams).length.should.eql(0);
+    });
+
+    it("should treat no options as empty options", function () {
+      var extraParams = this.strategy.authorizationParams(undefined);
+      Object.keys(extraParams).length.should.eql(0);
     });
 
   });
