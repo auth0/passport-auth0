@@ -63,6 +63,24 @@ app.get('/login/google',
 });
 ~~~
 
+If you want to specify an audience for the returned `access_token` you can:
+
+~~~javascript
+app.get('/login',
+  passport.authenticate('auth0', {audience: 'urn:my-api'}), function (req, res) {
+  res.redirect("/");
+});
+~~~
+
+If you want to control the OIDC prompt you can use:
+
+~~~javascript
+app.get('/login',
+  passport.authenticate('auth0', {prompt: 'none'}), function (req, res) {
+  res.redirect("/");
+});
+~~~
+
 ## API access
 
 If you want to get a list of connections or users from auth0, use the [auth0 module](https://github.com/auth0/node-auth0).
