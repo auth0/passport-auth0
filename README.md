@@ -1,3 +1,7 @@
+# passport-auth0
+
+[![Build Status](https://travis-ci.org/auth0/passport-auth0.svg?branch=master)](https://travis-ci.org/auth0/passport-auth0)
+
 This is the auth0 authentication strategy for Passport.js.
 
 ## Installation
