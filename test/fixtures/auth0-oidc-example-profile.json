@@ -1,0 +1,20 @@
+{
+  "email": "jfromaniello@gmail.com",
+  "family_name": "Romaniello",
+  "gender": "male",
+  "given_name": "José F.",
+  "identities": [
+    {
+      "access_token": "aaaaccceesss",
+      "provider": "google-oauth2",
+      "user_id": "ddddd123123123",
+      "connection": "google-oauth2",
+      "isSocial": true
+    }
+  ],
+  "locale": "en",
+  "name": "José F. Romaniello",
+  "nickname": "jfromaniello",
+  "picture": "https://lh3.googleusedasdas.fdasdsa",
+  "sub": "google-oauth2|ddddd123123123"
+}
