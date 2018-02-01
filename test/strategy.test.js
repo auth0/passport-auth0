@@ -71,6 +71,16 @@ describe('auth0 strategy', function () {
       Object.keys(extraParams).length.should.eql(0);
     });
 
+    it('should map the login_hint field', function () {
+      var extraParams = this.strategy.authorizationParams({login_hint: 'test.user@auth0.com'});
+      extraParams.login_hint.should.eql('test.user@auth0.com');
+    });
+
+    it('should not map the login_hint field if its not a string', function () {
+      var extraParams = this.strategy.authorizationParams({login_hint: 42});
+      should.not.exist(extraParams.login_hint);
+    });
+
   });
 
   describe('authenticate', function () { 
