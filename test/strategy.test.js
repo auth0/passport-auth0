@@ -29,6 +29,10 @@ describe('auth0 strategy', function () {
       .userInfoURL.should.eql('https://jj.auth0.com/userinfo');
   });
 
+  it('state should be true by default', function() {
+    this.strategy.options.state.should.be.true();
+  });
+
   describe('authorizationParams', function () {
 
     it('should map the connection field', function () {
@@ -88,4 +92,36 @@ describe('auth0 strategy', function () {
       });
     });
   }); 
+});
+
+describe('auth0 strategy with state parameter disabled', function () {
+  var strategy = new Auth10Strategy({
+    domain:       'jj.auth0.com',
+    clientID:     'testid',
+    clientSecret: 'testsecret',
+    callbackURL:  '/callback',
+    state: false
+   },
+   function(accessToken, idToken, profile, done) {}
+  );
+
+ it('state parameter should remain disabled', function() {
+  strategy.options.state.should.be.false();
+ });
+});
+
+describe('auth0 strategy with state parameter enabled explicitly', function () {
+  var strategy = new Auth10Strategy({
+    domain:       'jj.auth0.com',
+    clientID:     'testid',
+    clientSecret: 'testsecret',
+    callbackURL:  '/callback',
+    state: true
+   },
+   function(accessToken, idToken, profile, done) {}
+  );
+
+ it('state parameter should be enabled', function() {
+  strategy.options.state.should.be.true();
+ });
 });
