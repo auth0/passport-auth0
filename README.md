@@ -33,6 +33,26 @@ var strategy = new Auth0Strategy({
 passport.use(strategy);
 ~~~
 
+### State parameter
+
+The Auth0 Passport strategy enforces use of `state` parameter in OAuth 2.0 [authorization requests](https://tools.ietf.org/html/rfc6749#section-4.1.1) and requires session support in Express to be enabled.
+
+If you require the `state` parameter to be omitted (which is not recommended), you can suppress it when calling the Auth0 Passport strategy constructor:
+
+~~~js
+var Auth0Strategy = require('passport-auth0');
+
+var strategy = new Auth0Strategy({
+     domain: 'your-domain.auth0.com',
+     // ...
+     state: false
+  },
+  function(accessToken, refreshToken, extraParams, profile, done) {
+    // ...
+  }
+);
+~~~
+
 ## Usage
 
 ~~~js
