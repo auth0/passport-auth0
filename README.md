@@ -87,6 +87,17 @@ app.get('/login/google',
 });
 ~~~
 
+If you force an identity provider you can also request custom scope from that identity provider:
+
+~~~javascript
+app.get('/login/google', passport.authenticate('auth0', {
+  connection: 'google-oauth2',
+  connection_scope: 'https://www.googleapis.com/auth/analytics, https://www.googleapis.com/auth/contacts.readonly'
+}), function (req, res) {
+  res.redirect("/");
+});
+~~~
+
 If you want to specify an audience for the returned `access_token` you can:
 
 ~~~javascript
