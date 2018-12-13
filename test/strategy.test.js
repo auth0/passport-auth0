@@ -45,6 +45,29 @@ describe('auth0 strategy', function () {
       should.not.exist(extraParams.connection);
     });
 
+    it('should map the connection_scope field', function () {
+      var extraParams = this.strategy.authorizationParams({
+        connection: 'foo',
+        connection_scope: 'foo'
+      });
+      extraParams.connection_scope.should.eql('foo');
+    });
+
+    it('should not map the connection_scope field if connection is not set', function () {
+      var extraParams = this.strategy.authorizationParams({
+        connection_scope: 'foo'
+      });
+      should.not.exist(extraParams.connection_scope);
+    });
+
+    it('should not map the connection_scope field if its not a string', function () {
+      var extraParams = this.strategy.authorizationParams({
+        connection: 'foo',
+        connection_scope: 42
+      });
+      should.not.exist(extraParams.connection_scope);
+    });
+
     it('should map the audience field', function () {
       var extraParams = this.strategy.authorizationParams({audience: 'foo'});
       extraParams.audience.should.eql('foo');
