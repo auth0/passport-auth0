@@ -117,6 +117,13 @@ A complete example of using this library is shown [here](http://github.com/auth0
 
 For more information about [Auth0](http://auth0.com) contact our [documentation page](http://docs.auth0.com/).
 
+You can also see fully working demos using this library in our [Auth0 blog](https://auth0.com/blog/):
+
+* [Build and Authenticate a Node.js App with JSON Web Tokens](https://auth0.com/blog/building-and-authenticating-nodejs-apps/#nodejs-directory-structure)
+
+* [Developing a Real-Time, Collaborative Editor with Pusher
+](https://auth0.com/blog/developing-a-real-time-collaborative-editor-with-pusher/)
+
 ## Issue Reporting
 
 If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
