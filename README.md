@@ -109,15 +109,26 @@ app.get('/login',
 
 If you want to get a list of connections or users from Auth0, [use the Node.js SDK](https://github.com/auth0/node-auth0).
 
-## Documentation
-
-For more information about [Auth0](http://auth0.com) contact our [documentation page](http://docs.auth0.com/).
+## Examples
 
 You can also see fully working demos using this library in our [Auth0 blog](https://auth0.com/blog/):
 
 * [Build and Authenticate a Node.js App with JSON Web Tokens](https://auth0.com/blog/building-and-authenticating-nodejs-apps/#nodejs-directory-structure)
 
 * [Developing a Real-Time, Collaborative Editor with Pusher](https://auth0.com/blog/developing-a-real-time-collaborative-editor-with-pusher/)
+
+## What is Auth0?
+
+Auth0 helps you to easily:
+
+- implement authentication with multiple identity providers, including social (e.g., Google, Facebook, Microsoft, LinkedIn, GitHub, Twitter, etc), or enterprise (e.g., Windows Azure AD, Google Apps, Active Directory, ADFS, SAML, etc.)
+- log in users with username/password databases, passwordless, or multi-factor authentication
+- link multiple user accounts together
+- generate signed JSON Web Tokens to authorize your API calls and flow the user identity securely
+- access demographics and analytics detailing how, when, and where users are logging in
+- enrich user profiles from other data sources using customizable JavaScript rules
+
+[Why Auth0?](https://auth0.com/why-auth0)
 
 ## Issue Reporting
 
