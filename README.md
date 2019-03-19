@@ -76,7 +76,7 @@ app.get('/login',
 });
 ~~~
 
-This way when you go to ```/login```, you will get redirected to an Auth0 page where you can select the identity provider.
+This way when you go to `/login`, you will get redirected to an Auth0 page where you can select the identity provider.
 
 If you want to force an identity provider you can use:
 
@@ -107,11 +107,7 @@ app.get('/login',
 
 ## API access
 
-If you want to get a list of connections or users from Auth0, use the [Auth0 module](https://github.com/auth0/node-auth0).
-
-## Complete example
-
-A complete example of using this library is shown [here](http://github.com/auth0/passport-auth0).
+If you want to get a list of connections or users from Auth0, [use the Node.js SDK](https://github.com/auth0/node-auth0).
 
 ## Documentation
 
@@ -121,8 +117,7 @@ You can also see fully working demos using this library in our [Auth0 blog](http
 
 * [Build and Authenticate a Node.js App with JSON Web Tokens](https://auth0.com/blog/building-and-authenticating-nodejs-apps/#nodejs-directory-structure)
 
-* [Developing a Real-Time, Collaborative Editor with Pusher
-](https://auth0.com/blog/developing-a-real-time-collaborative-editor-with-pusher/)
+* [Developing a Real-Time, Collaborative Editor with Pusher](https://auth0.com/blog/developing-a-real-time-collaborative-editor-with-pusher/)
 
 ## Issue Reporting
 
