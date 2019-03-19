@@ -76,7 +76,7 @@ app.get('/login',
 });
 ~~~
 
-This way when you go to ```/login``` you will get redirected to auth0, to a page where you can select the identity provider.
+This way when you go to ```/login``` you will get redirected to Auth0, to a page where you can select the identity provider.
 
 If you want to force an identity provider you can use:
 
@@ -107,7 +107,7 @@ app.get('/login',
 
 ## API access
 
-If you want to get a list of connections or users from auth0, use the [auth0 module](https://github.com/auth0/node-auth0).
+If you want to get a list of connections or users from Auth0, use the [Auth0 module](https://github.com/auth0/node-auth0).
 
 ## Complete example
 
@@ -115,7 +115,7 @@ A complete example of using this library [here](http://github.com/auth0/passport
 
 ## Documentation
 
-For more information about [auth0](http://auth0.com) contact our [documentation page](http://docs.auth0.com/).
+For more information about [Auth0](http://auth0.com) contact our [documentation page](http://docs.auth0.com/).
 
 ## Issue Reporting
 
