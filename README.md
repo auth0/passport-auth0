@@ -6,15 +6,15 @@ This is the [Auth0](https://auth0.com/) authentication strategy for Passport.js.
 
 ## Passport.js
 
-[Passport](http://passportjs.org/) is authentication middleware for Node.js. Passport can be unobtrusively dropped in to any Express-based web application.
+[Passport](http://passportjs.org/) is authentication middleware for Node.js. Passport can be unobtrusively dropped into any Express-based web application.
 
 ## Installation
 
-	npm install passport-auth0
+    npm install passport-auth0
 
 ## Configuration
 
-Take your credentials from the [settings](https://app.auth0.com/#/settings) section in the dashboard and initialize the strategy as follows:
+Take your credentials from the _Settings_ tab of your [Auth0 application](https://manage.auth0.com/#/applications/) in the dashboard and initialize the strategy as follows:
 
 ~~~js
 var Auth0Strategy = require('passport-auth0'),
@@ -39,7 +39,7 @@ passport.use(strategy);
 
 ### State parameter
 
-The Auth0 Passport strategy enforces use of `state` parameter in OAuth 2.0 [authorization requests](https://tools.ietf.org/html/rfc6749#section-4.1.1) and requires session support in Express to be enabled.
+The Auth0 Passport strategy enforces the use of the `state` parameter in OAuth 2.0 [authorization requests](https://tools.ietf.org/html/rfc6749#section-4.1.1) and requires session support in Express to be enabled.
 
 If you require the `state` parameter to be omitted (which is not recommended), you can suppress it when calling the Auth0 Passport strategy constructor:
 
@@ -76,7 +76,7 @@ app.get('/login',
 });
 ~~~
 
-This way when you go to ```/login``` you will get redirected to Auth0, to a page where you can select the identity provider.
+This way when you go to ```/login```, you will get redirected to an Auth0 page where you can select the identity provider.
 
 If you want to force an identity provider you can use:
 
@@ -111,7 +111,7 @@ If you want to get a list of connections or users from Auth0, use the [Auth0 mod
 
 ## Complete example
 
-A complete example of using this library [here](http://github.com/auth0/passport-auth0).
+A complete example of using this library is shown [here](http://github.com/auth0/passport-auth0).
 
 ## Documentation
 
