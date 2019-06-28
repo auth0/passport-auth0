@@ -78,6 +78,15 @@ app.get('/login',
 
 This way when you go to `/login`, you will get redirected to an Auth0 page where you can select the identity provider.
 
+If you want to change the scope of the ID token when returned, add a `scope` property to the authenticate config passed when defining the route. These must be [OIDC standard scopes](https://auth0.com/docs/scopes/current/oidc-scopes). If you need data outside of the standard scopes, you'll need to add [custom claims](https://auth0.com/docs/scopes/current/custom-claims) to the token.
+
+~~~javascript
+app.get('/login/google',
+  passport.authenticate('auth0', {scope: 'openid email profile'}), function (req, res) {
+  res.redirect("/");
+});
+~~~
+
 If you want to force an identity provider you can use:
 
 ~~~javascript
