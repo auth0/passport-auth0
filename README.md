@@ -2,19 +2,19 @@
 
 [![Build Status](https://travis-ci.org/auth0/passport-auth0.svg?branch=master)](https://travis-ci.org/auth0/passport-auth0)
 
-This is the auth0 authentication strategy for Passport.js.
+This is the [Auth0](https://auth0.com/) authentication strategy for Passport.js.
 
 ## Passport.js
 
-[Passport](http://passportjs.org/) is authentication middleware for Node.js. Passport can be unobtrusively dropped in to any Express-based web application.
+[Passport](http://passportjs.org/) is authentication middleware for Node.js. Passport can be unobtrusively dropped into any Express-based web application.
 
 ## Installation
 
-	npm install passport-auth0
+    npm install passport-auth0
 
 ## Configuration
 
-Take your credentials from the [settings](https://app.auth0.com/#/settings) section in the dashboard and initialize the strategy as follows:
+Take your credentials from the _Settings_ tab of your [Auth0 application](https://manage.auth0.com/#/applications/) in the dashboard and initialize the strategy as follows:
 
 ~~~js
 var Auth0Strategy = require('passport-auth0'),
@@ -39,7 +39,7 @@ passport.use(strategy);
 
 ### State parameter
 
-The Auth0 Passport strategy enforces use of `state` parameter in OAuth 2.0 [authorization requests](https://tools.ietf.org/html/rfc6749#section-4.1.1) and requires session support in Express to be enabled.
+The Auth0 Passport strategy enforces the use of the `state` parameter in OAuth 2.0 [authorization requests](https://tools.ietf.org/html/rfc6749#section-4.1.1) and requires session support in Express to be enabled.
 
 If you require the `state` parameter to be omitted (which is not recommended), you can suppress it when calling the Auth0 Passport strategy constructor:
 
@@ -76,7 +76,16 @@ app.get('/login',
 });
 ~~~
 
-This way when you go to ```/login``` you will get redirected to auth0, to a page where you can select the identity provider.
+This way when you go to `/login`, you will get redirected to an Auth0 page where you can select the identity provider.
+
+If you want to change the scope of the ID token provided, add a `scope` property to the authenticate configuration passed when defining the route. These must be [OIDC standard scopes](https://auth0.com/docs/scopes/current/oidc-scopes). If you need data outside of the standard scopes, you can add [custom claims](https://auth0.com/docs/scopes/current/custom-claims) to the token.
+
+~~~javascript
+app.get('/login',
+  passport.authenticate('auth0', {scope: 'openid email profile'}), function (req, res) {
+  res.redirect("/");
+});
+~~~
 
 If you want to force an identity provider you can use:
 
@@ -118,15 +127,28 @@ app.get('/login',
 
 ## API access
 
-If you want to get a list of connections or users from auth0, use the [auth0 module](https://github.com/auth0/node-auth0).
+If you want to get a list of connections or users from Auth0, [use the Node.js SDK](https://github.com/auth0/node-auth0).
 
-## Complete example
+## Examples
 
-A complete example of using this library [here](http://github.com/auth0/passport-auth0).
+You can also see fully working demos using this library in our [Auth0 blog](https://auth0.com/blog/):
 
-## Documentation
+* [Build and Authenticate a Node.js App with JSON Web Tokens](https://auth0.com/blog/building-and-authenticating-nodejs-apps/#nodejs-directory-structure)
 
-For more information about [auth0](http://auth0.com) contact our [documentation page](http://docs.auth0.com/).
+* [Developing a Real-Time, Collaborative Editor with Pusher](https://auth0.com/blog/developing-a-real-time-collaborative-editor-with-pusher/)
+
+## What is Auth0?
+
+Auth0 helps you to easily:
+
+- implement authentication with multiple identity providers, including social (e.g., Google, Facebook, Microsoft, LinkedIn, GitHub, Twitter, etc), or enterprise (e.g., Windows Azure AD, Google Apps, Active Directory, ADFS, SAML, etc.)
+- log in users with username/password databases, passwordless, or multi-factor authentication
+- link multiple user accounts together
+- generate signed JSON Web Tokens to authorize your API calls and flow the user identity securely
+- access demographics and analytics detailing how, when, and where users are logging in
+- enrich user profiles from other data sources using customizable JavaScript rules
+
+[Why Auth0?](https://auth0.com/why-auth0)
 
 ## Issue Reporting
 

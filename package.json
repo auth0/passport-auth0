@@ -17,12 +17,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^2.2.5",
+    "mocha": "^6.1.4",
     "should": "^7.1.0"
   },
   "dependencies": {
     "passport-oauth": "^1.0.0",
-    "request": "^2.61.0",
+    "request": "^2.83.0",
     "xtend": "^4.0.0"
   }
 }

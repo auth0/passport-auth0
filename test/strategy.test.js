@@ -108,6 +108,20 @@ describe('auth0 strategy', function () {
       should.not.exist(extraParams.login_hint);
     });
 
+    it('should map the acr_values field', function () {
+      var extraParams = this.strategy.authorizationParams({acr_values: 'dummy:1'});
+      extraParams.acr_values.should.eql('dummy:1');
+    });
+
+    it('should not map the acr_values field if its not a string', function () {
+      var extraParams = this.strategy.authorizationParams({acr_values: 1});
+      should.not.exist(extraParams.acr_values);
+    });
+
+    it('should not map the acr_values field when not specified in options', function () {
+      var extraParams = this.strategy.authorizationParams({});
+      should.not.exist(extraParams.acr_values);
+    });
   });
 
   describe('authenticate', function () { 
