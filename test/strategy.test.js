@@ -1,11 +1,11 @@
-var Auth10Strategy = require('../lib');
+var Auth0Strategy = require('../lib');
 var assert = require('assert');
 var should = require('should');
 
 describe('auth0 strategy', function () {
   before(function () {
-    this.strategy = new Auth10Strategy({
-       domain:       'jj.auth0.com', 
+    this.strategy = new Auth0Strategy({
+       domain:       'test.auth0.com',
        clientID:     'testid',
        clientSecret: 'testsecret',
        callbackURL:  '/callback'
@@ -16,17 +16,17 @@ describe('auth0 strategy', function () {
 
   it('authorizationURL should have the domain', function () {
     this.strategy.options
-      .authorizationURL.should.eql('https://jj.auth0.com/authorize');
+      .authorizationURL.should.eql('https://test.auth0.com/authorize');
   });
-  
+
   it('tokenURL should have the domain', function () {
     this.strategy.options
-      .tokenURL.should.eql('https://jj.auth0.com/oauth/token');
+      .tokenURL.should.eql('https://test.auth0.com/oauth/token');
   });
-  
+
   it('userInfoURL should have the domain', function () {
     this.strategy.options
-      .userInfoURL.should.eql('https://jj.auth0.com/userinfo');
+      .userInfoURL.should.eql('https://test.auth0.com/userinfo');
   });
 
   it('state should be true by default', function() {
@@ -124,9 +124,9 @@ describe('auth0 strategy', function () {
     });
   });
 
-  describe('authenticate', function () { 
+  describe('authenticate', function () {
     it('when there is an error querystring propagate', function (done) {
-      
+
       this.strategy.fail = function (challenge, status) {
         challenge.should.eql('domain_mismatch');
         done();
@@ -138,12 +138,12 @@ describe('auth0 strategy', function () {
         }
       });
     });
-  }); 
+  });
 });
 
 describe('auth0 strategy with state parameter disabled', function () {
-  var strategy = new Auth10Strategy({
-    domain:       'jj.auth0.com',
+  var strategy = new Auth0Strategy({
+    domain:       'test.auth0.com',
     clientID:     'testid',
     clientSecret: 'testsecret',
     callbackURL:  '/callback',
@@ -158,8 +158,8 @@ describe('auth0 strategy with state parameter disabled', function () {
 });
 
 describe('auth0 strategy with state parameter enabled explicitly', function () {
-  var strategy = new Auth10Strategy({
-    domain:       'jj.auth0.com',
+  var strategy = new Auth0Strategy({
+    domain:       'test.auth0.com',
     clientID:     'testid',
     clientSecret: 'testsecret',
     callbackURL:  '/callback',
