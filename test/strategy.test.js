@@ -1,6 +1,7 @@
 var Auth0Strategy = require('../lib');
 var assert = require('assert');
 var should = require('should');
+var pkg = require('../package.json');
 
 describe('auth0 strategy', function () {
   before(function () {
@@ -27,6 +28,21 @@ describe('auth0 strategy', function () {
   it('userInfoURL should have the domain', function () {
     this.strategy.options
       .userInfoURL.should.eql('https://test.auth0.com/userinfo');
+  });
+
+  it('should include a telemetry header by default', function() {
+    var headers = this.strategy.options.customHeaders;
+    should.exist(headers['Auth0-Client']);
+  });
+
+  it('should include a correct telemetry values', function() {
+    var telemetryValue = new Buffer( this.strategy.options.customHeaders['Auth0-Client'], 'base64' ).toString('ascii');
+    var telemetryJson = JSON.parse(telemetryValue)
+
+    telemetryJson.name.should.eql('passport-auth0');
+    telemetryJson.version.should.eql(pkg.version);
+    should.exist(telemetryJson.env);
+    should.exist(telemetryJson.env.node);
   });
 
   it('state should be true by default', function() {
@@ -138,6 +154,31 @@ describe('auth0 strategy', function () {
         }
       });
     });
+  });
+});
+
+describe('auth0 strategy with a custom header', function () {
+  var strategy = new Auth0Strategy(
+    {
+      domain:       'test.auth0.com',
+      clientID:     'testid',
+      clientSecret: 'testsecret',
+      callbackURL:  '/callback',
+      customHeaders: {
+        testCustomHeader: 'Test Custom Header'
+      }
+    },
+    function(accessToken, idToken, profile, done) {}
+  );
+
+  it('should not override a custom header', function() {
+    should.exist(strategy.options.customHeaders);
+    should.exist(strategy.options.customHeaders.testCustomHeader);
+    strategy.options.customHeaders.testCustomHeader.should.eql('Test Custom Header');
+  });
+
+  it('should keep the telemetry header', function() {
+    should.exist(strategy.options.customHeaders['Auth0-Client']);
   });
 });
 
