@@ -1,6 +1,6 @@
 {
   "name": "passport-auth0",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Auth0 platform authentication strategy for Passport.js",
   "main": "lib/index.js",
   "scripts": {
@@ -9,11 +9,6 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/auth0/passport-auth0"
-  },
-  "author": {
-    "name": "José F. Romaniello",
-    "email": "jfromaniello@gmail.com",
-    "url": "http://joseoncode.com"
   },
   "license": "MIT",
   "devDependencies": {
