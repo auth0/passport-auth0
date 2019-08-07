@@ -49,6 +49,22 @@ describe('auth0 strategy', function () {
     this.strategy.options.state.should.be.true();
   });
 
+  it('should copy options object without mutating', function () {
+    var options = {
+      domain:       'test.auth0.com',
+      clientID:     'testid',
+      clientSecret: 'testsecret',
+      callbackURL:  '/callback'
+    };
+    var strategy = new Auth0Strategy(
+      options,
+      function(accessToken, idToken, profile, done) {}
+    );
+
+    strategy.options.should.be.not.equal(options);
+    options.should.not.have.property('authorizationURL');
+  });
+
   describe('authorizationParams', function () {
 
     it('should map the connection field', function () {
