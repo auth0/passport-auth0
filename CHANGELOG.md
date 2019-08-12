@@ -1,7 +1,18 @@
 # Change Log
 
-## [v1.2.0](https://github.com/auth0/wp-auth0/tree/v1.2.0) (2019-07-31)
-[Full Changelog](https://github.com/auth0/wp-auth0/compare/v1.1.0...v1.2.0)
+## [v1.2.1](https://github.com/auth0/passport-auth0/tree/v1.2.1) (2019-08-12)
+[Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.2.0...v1.2.1)
+
+**Closed issues**
+- Strategy constructor mutates options argument [\#91](https://github.com/auth0/passport-auth0/issues/91)
+- Infinite redirect loop, "Invalid authorization request state." [\#89](https://github.com/auth0/passport-auth0/issues/89)
+- could I use cookie-session instead of express-session? [\#87](https://github.com/auth0/passport-auth0/issues/87)
+
+**Fixed**
+- Fix strategy constructor to not mutate options argument [\#92](https://github.com/auth0/passport-auth0/pull/92) ([naptowncode](https://github.com/naptowncode))
+
+## [v1.2.0](https://github.com/auth0/passport-auth0/tree/v1.2.0) (2019-07-31)
+[Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.1.0...v1.2.0)
 
 **Closed issues**
 - Not obvious how to style lock on redirect [\#74](https://github.com/auth0/passport-auth0/issues/74)
