@@ -129,6 +129,23 @@ app.get(
 );
 ```
 
+### initialPage
+
+If you want to change initial Page to sign up, set `mode` or `initialPage`(hosted):
+Values should be matched `login`, `signUp`, and `forgotPassword`
+
+[lock-v11-configuration](https://auth0.com/docs/libraries/lock/v11/configuration#initialscreen-string-)
+
+```js
+    '/signup',
+	passport.authenticate('auth0', {initialPage: 'signUp'}), 
+	function (req, res) {
+		res.redirect('/');
+	}
+
+
+``` 
+
 ## Support + Feedback
 
 - Use [Issues](https://github.com/auth0/passport-auth0/issues) for code-level support

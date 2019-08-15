@@ -154,6 +154,18 @@ describe('auth0 strategy', function () {
       var extraParams = this.strategy.authorizationParams({});
       should.not.exist(extraParams.acr_values);
     });
+
+    it('should not map the mode field as string ', function () {
+      var extraParams = this.strategy.authorizationParams({mode: 'signUp'});
+      should.not.exist(extraParams.mode);
+    });
+
+    it('should not map the mode initialPage as string', function () {
+      var extraParams = this.strategy.authorizationParams({initialPage: 'signUp'});
+      should.not.exist(extraParams.initialPage);
+    });
+
+
   });
 
   describe('authenticate', function () {
