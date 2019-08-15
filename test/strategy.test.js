@@ -157,12 +157,12 @@ describe('auth0 strategy', function () {
 
     it('should not map the mode field as string ', function () {
       var extraParams = this.strategy.authorizationParams({mode: 'signUp'});
-      should.not.exist(extraParams.mode);
+      extraParams.mode.should.eql('signUp');
     });
 
     it('should not map the mode initialPage as string', function () {
       var extraParams = this.strategy.authorizationParams({initialPage: 'signUp'});
-      should.not.exist(extraParams.initialPage);
+      extraParams.initialPage.should.eql('signUp');
     });
 
 
