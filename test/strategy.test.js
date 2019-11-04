@@ -4,7 +4,7 @@ var should = require('should');
 var pkg = require('../package.json');
 
 describe('auth0 strategy', function () {
-  before(function () {
+  beforeEach(function () {
     this.strategy = new Auth0Strategy({
        domain:       'test.auth0.com',
        clientID:     'testid',
@@ -153,6 +153,39 @@ describe('auth0 strategy', function () {
     it('should not map the acr_values field when not specified in options', function () {
       var extraParams = this.strategy.authorizationParams({});
       should.not.exist(extraParams.acr_values);
+    });
+
+    it('should map the nonce field when authParams set on strategy', function () {
+      this.strategy.authParams = { nonce: 'foo'};
+      var extraParams = this.strategy.authorizationParams({});
+      extraParams.nonce.should.eql('foo');
+    });
+
+    it('should not map the nonce field if its not a string', function () {
+      var extraParams = this.strategy.authorizationParams({nonce: 1});
+      should.not.exist(extraParams.nonce);
+    });
+
+    it('should not map the nonce field when not specified in options', function () {
+      var extraParams = this.strategy.authorizationParams({});
+      should.not.exist(extraParams.nonce);
+    });
+
+    it('should map the max_age field when set in strategy options', function () {
+      var maxAge = Math.floor(Date.now()/1000);
+      this.strategy.options = { maxAge: maxAge };
+      var extraParams = this.strategy.authorizationParams({max_age: maxAge});
+      extraParams.max_age.should.eql(maxAge);
+    });
+
+    it('should not map the max_age field if its not a number', function () {
+      var extraParams = this.strategy.authorizationParams({max_age: '60'});
+      should.not.exist(extraParams.max_age);
+    });
+
+    it('should not map the max_age field when not specified in options', function () {
+      var extraParams = this.strategy.authorizationParams({});
+      should.not.exist(extraParams.max_age);
     });
   });
 
