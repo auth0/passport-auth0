@@ -201,7 +201,7 @@ describe('jwt.verify', function() {
       done();
     }
   });
-  it('should throw when azm claim not found when aud has multiple values', function (done) {
+  it('should throw when azp claim not found when aud has multiple values', function (done) {
     var EXPECTED_ERROR_MESSAGE = 'Authorized Party (azp) claim must be a string present in the ID token when Audience (aud) claim has multiple values';
     try {
       var token = generateJWT({ azp: undefined });
@@ -212,7 +212,7 @@ describe('jwt.verify', function() {
       done();
     }
   });
-  it('should throw when azm claim doesnt match the expected aud', function (done) {
+  it('should throw when azp claim doesnt match the expected aud', function (done) {
     var EXPECTED_ERROR_MESSAGE = 'Authorized Party (azp) claim mismatch in the ID token; expected "external-test-999", found "tokens-test-123"';
     try {
       var token = generateJWT({});
