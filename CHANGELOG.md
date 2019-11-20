@@ -1,5 +1,15 @@
 # Change Log
 
+## [v1.3.0](https://github.com/auth0/passport-auth0/tree/v1.3.0) (2019-11-19)
+[Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.2.1...v1.3.0)
+
+**Added**
+- Improved OIDC compliance [\#97](https://github.com/auth0/passport-auth0/pull/97) ([davidpatrick](https://github.com/davidpatrick))
+
+**Security**
+- Update `lodash` package to address security vulnerabilities [\#94](https://github.com/auth0/passport-auth0/pull/94) ([https://github.com/is2ei](https://github.com/https://github.com/is2ei))
+- Update `request` package to address security vulnerabilities with dependency `cryptiles` [\#98](https://github.com/auth0/passport-auth0/pull/98) ([davidpatrick](https://github.com/davidpatrick))
+
 ## [v1.2.1](https://github.com/auth0/passport-auth0/tree/v1.2.1) (2019-08-12)
 [Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.2.0...v1.2.1)
 
