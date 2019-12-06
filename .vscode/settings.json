@@ -1,6 +1,0 @@
-{
-    "prettier.disableLanguages": [
-        "js"
-    ],
-    "editor.formatOnSave": false
-}
