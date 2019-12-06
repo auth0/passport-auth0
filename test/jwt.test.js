@@ -83,7 +83,7 @@ function generateJWT(bodyOverrides, alg){
 describe('jwt.decode', function() {
   it('should decode a valid token', function() {
     var alg = 'RS256';
-    var token = generateJWT({}, alg);
+    var token = generateJWT({name: 'ÁÁutf8'}, alg);
     var decoded = jwt.decode(token);
 
     assert.equal(decoded._raw, token);
