@@ -1,5 +1,17 @@
 # Change Log
 
+## [v1.3.1](https://github.com/auth0/passport-auth0/tree/v1.3.1) (2019-12-06)
+[Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.3.0...v1.3.1)
+
+**Closed issues**
+- the userProfile does not have 'provider' field correctly populated. [\#102](https://github.com/auth0/passport-auth0/issues/102)
+- Social login breaks when account name contains utf-8 characters. [\#100](https://github.com/auth0/passport-auth0/issues/100)
+- Strategy does not work on Restify [\#96](https://github.com/auth0/passport-auth0/issues/96)
+
+**Fixed**
+- Parses provider from user_id if identities is not provided. [\#103](https://github.com/auth0/passport-auth0/pull/103) ([kertof](https://github.com/kertof))
+- Fix decoding jwt when encoded payload contains utf8 characters [\#101](https://github.com/auth0/passport-auth0/pull/101) ([abelptvts](https://github.com/abelptvts))
+
 ## [v1.3.0](https://github.com/auth0/passport-auth0/tree/v1.3.0) (2019-11-19)
 [Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.2.1...v1.3.0)
 
