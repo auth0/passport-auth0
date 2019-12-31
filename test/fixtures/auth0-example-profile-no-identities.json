@@ -1,11 +1,11 @@
 {
-  "email": "jfromaniello@gmail.com",
-  "family_name": "Romaniello",
-  "gender": "male",
-  "given_name": "José F.",
-  "locale": "en",
-  "name": "José F. Romaniello",
-  "nickname": "jfromaniello",
-  "picture": "https://lh3.googleusedasdas.fdasdsa",
-  "user_id": "google-oauth2|ddddd123123123"
+  "email": "__test_email__",
+  "family_name": "__test_family_name__",
+  "gender": "__test_gender__",
+  "given_name": "__test_given_name__",
+  "locale": "__test_locale__",
+  "name": "__test_name__",
+  "nickname": "__test_nickname__",
+  "picture": "__test_picture__",
+  "user_id": "__test_provider__|__test_user_id__"
 }
