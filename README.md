@@ -129,6 +129,46 @@ app.get(
 );
 ```
 
+### Theme options
+
+To pass theme props to the Universal login, add the following:
+See [Theme documentation](https://auth0.com/docs/libraries/lock/v11/configuration#theme-object-). for more options.
+
+##### 1. Set the theme when initiating the strategy
+```js
+new Strategy({
+      // ...
+    theme: {
+      logo: '://url.com/logo.png'
+    },
+  }, (accessToken, refreshToken, extraParams, profile, done) => {
+    done(null, profile)
+  }
+```
+##### 2. Overwrite the theme when calling the login endpoint (Optional)
+
+```js
+const options = {
+  theme: {
+    logo: '://url.com/logo.png'
+  }
+};
+
+app.get('/login', passport.authenticate('auth0', options), 
+  function (req, res) {
+    res.redirect('/');
+  }
+);
+```
+
+##### 3. Customize [Login page](https://manage.auth0.com/dashboard/eu/leaseplan-menno/login_page)
+After passing the theme you will be able to use the theme object in the Universal Login template by parsing `config.extraParams.theme` by changing the template on line `57`:
+
+```js
+theme: config && config.extraParams && config.extraParams.theme ? JSON.parse(config.extraParams.theme) : {},
+```
+
+
 ## Support + Feedback
 
 - Use [Issues](https://github.com/auth0/passport-auth0/issues) for code-level support
