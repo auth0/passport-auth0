@@ -187,6 +187,26 @@ describe('auth0 strategy', function () {
       var extraParams = this.strategy.authorizationParams({});
       should.not.exist(extraParams.max_age);
     });
+
+    it('should map the theme field when passed as a string', function () {
+      var extraParams = this.strategy.authorizationParams({theme: '{"logo":"http://website.com/logo.png"}'});
+      extraParams.theme.should.eql('{"logo":"http://website.com/logo.png"}');
+    });
+
+    it('should convert the theme field to a string when passed as an object', function () {
+      var extraParams = this.strategy.authorizationParams({theme: {logo: 'http://website.com/logo.png'}});
+      extraParams.theme.should.eql('{"logo":"http://website.com/logo.png"}');
+    });
+
+    it('should not map the theme field when passed as an integer', function () {
+      var extraParams = this.strategy.authorizationParams({theme: 100});
+      should.not.exist(extraParams.theme);
+    });
+
+    it('should not map the theme field when passed as an array', function () {
+      var extraParams = this.strategy.authorizationParams({theme: ["foo", "bar"]});
+      should.not.exist(extraParams.theme);
+    });
   });
 
   describe('authenticate', function () {
