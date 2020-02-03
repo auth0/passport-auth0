@@ -101,7 +101,7 @@ describe('jwt.decode', function() {
       assert.throws(jwt.decode('test'), IDTOKEN_ERROR_MESSAGE);
       assert.throws(jwt.decode('test.'), IDTOKEN_ERROR_MESSAGE);
       assert.throws(jwt.decode('test.test'), IDTOKEN_ERROR_MESSAGE);
-      assert.throws(jwt.decode('test.test.test.test'), 
+      assert.throws(jwt.decode('test.test.test.test'),
         IDTOKEN_ERROR_MESSAGE
       );
     });
@@ -290,6 +290,17 @@ describe('jwt.verify', function() {
       done(new Error('Should have thrown error: ' + EXPECTED_ERROR_MESSAGE));
     } catch (error) {
       assert(error.message.includes(EXPECTED_ERROR_MESSAGE));
+      done();
+    }
+  });
+  it('should throw when Issued At is missing', function(done) {
+    var EXPECTED_ERROR_MESSAGE = 'Issued At (iat) claim must be a number present in the ID token';
+    try {
+      var token = generateJWT({ iat: undefined });
+      jwt.verify(token, expectedOptions)
+      done(new Error('Should have thrown error: ' + EXPECTED_ERROR_MESSAGE));
+    } catch (error) {
+      assert.equal(error.message, EXPECTED_ERROR_MESSAGE);
       done();
     }
   });
