@@ -1,5 +1,18 @@
 # Change Log
 
+## [v1.3.2](https://github.com/auth0/passport-auth0/tree/v1.3.1) (2020-02.03)
+[Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.3.1...v1.3.2)
+
+**Closed issues**
+- 1.2.1 -> 1.3.1 upgrade causes "Cannot read property 'scope' of undefined" [\#107](https://github.com/auth0/passport-auth0/issues/107)
+- TypeError: Cannot read property 'authParams' of undefined [\#106](https://github.com/auth0/passport-auth0/issues/106)
+- Cannot read property 'split' of undefined in Profile.js with GSuite login [\#105](https://github.com/auth0/passport-auth0/issues/105)
+
+**Fixed**
+- Remove ID token `iat` value check [\#109](https://github.com/auth0/passport-auth0/pull/114) ([joshcanhelp](https://github.com/joshcanhelp))
+- Fix missing ID causing cannot read error [\#109](https://github.com/auth0/passport-auth0/pull/109) ([joshcanhelp](https://github.com/joshcanhelp))
+- Guard against undefined parameter access [\#108](https://github.com/auth0/passport-auth0/pull/108) ([pihvi](https://github.com/pihvi))
+
 ## [v1.3.1](https://github.com/auth0/passport-auth0/tree/v1.3.1) (2019-12-06)
 [Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.3.0...v1.3.1)
 
