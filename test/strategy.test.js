@@ -155,6 +155,30 @@ describe('auth0 strategy', function () {
       should.not.exist(extraParams.acr_values);
     });
 
+    it('should map additional_params fields', function () {
+      var extraParams = this.strategy.authorizationParams({
+        additional_params: {
+          test_param: 'dummy:1',
+        }
+      });
+      extraParams.test_param.should.eql('dummy:1');
+    });
+
+    it('should override explicit fields set in additional_params', function () {
+      var extraParams = this.strategy.authorizationParams({
+        additional_params: {
+          acr_values: 2,
+        },
+        acr_values: 1
+      });
+      extraParams.acr_values.should.eql(2);
+    });
+
+    it('should not map additional_params fields if its not a object', function () {
+      var extraParams = this.strategy.authorizationParams({ additional_params: 42 });
+      Object.keys(extraParams).length.should.eql(0);
+    });
+
     it('should map the nonce field when authParams set on strategy', function () {
       this.strategy.authParams = { nonce: 'foo'};
       var extraParams = this.strategy.authorizationParams({});

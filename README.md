@@ -129,6 +129,20 @@ app.get(
 );
 ```
 
+### Additional Parameters
+
+If you want to set custom parameters not natively supported by the library:
+
+```js
+app.get(
+	'/login',
+	passport.authenticate('auth0', {additional_params: {'screen_hint': 'signup'}}),
+	function (req, res) {
+		res.redirect('/');
+	}
+);
+```
+
 ## Support + Feedback
 
 - Use [Issues](https://github.com/auth0/passport-auth0/issues) for code-level support
