@@ -1,6 +1,18 @@
 # Change Log
 
-## [v1.3.2](https://github.com/auth0/passport-auth0/tree/v1.3.1) (2020-02-03)
+## [v1.3.3](https://github.com/auth0/passport-auth0/tree/v1.3.3) (2020-06-05)
+[Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.3.3...v1.3.2)
+
+**Closed issues**
+- Having a session is now required[\#107](https://github.com/auth0/passport-auth0/issues/107)
+
+**Fixed**
+-  Allow sessionless authentication [\#120](https://github.com/auth0/passport-auth0/pull/120) ([davidpatrick](https://github.com/davidpatrick))
+
+**Security**
+-  Fixed dependency vulnerability in Mocha [\#121](https://github.com/auth0/passport-auth0/pull/121) ([davidpatrick](https://github.com/davidpatrick))
+
+## [v1.3.2](https://github.com/auth0/passport-auth0/tree/v1.3.2) (2020-02-03)
 [Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.3.1...v1.3.2)
 
 **Closed issues**
