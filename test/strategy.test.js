@@ -17,6 +17,11 @@ describe('auth0 strategy', function () {
 
   describe('options', function() {
     describe('defaults', function() {
+      it('expectedIssuer should have the domain', function () {
+        this.strategy.options
+        .expectedIssuer.should.eql('https://test.auth0.com/');
+      });
+
       it('authorizationURL should have the domain', function () {
         this.strategy.options
           .authorizationURL.should.eql('https://test.auth0.com/authorize');
@@ -45,6 +50,7 @@ describe('auth0 strategy', function () {
           clientSecret: 'testsecret',
           callbackURL:  '/callback',
 
+          expectedIssuer:   'https://foobar.com/',
           authorizationURL: 'https://foobar.com/authorize',
           tokenURL:         'https://foobar.com/oauth/token',
           userInfoURL:      'https://foobar.com/userinfo',
@@ -52,6 +58,9 @@ describe('auth0 strategy', function () {
         },
         function(accessToken, idToken, profile, done) {}
       );
+
+      strategy.options
+        .expectedIssuer.should.eql('https://foobar.com/');
 
       strategy.options
         .authorizationURL.should.eql('https://foobar.com/authorize');
@@ -66,7 +75,6 @@ describe('auth0 strategy', function () {
         .apiUrl.should.eql('https://foobar.com/api');
     });
   });
-
 
   it('should include a telemetry header by default', function() {
     var headers = this.strategy.options.customHeaders;
