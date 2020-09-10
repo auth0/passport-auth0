@@ -10,6 +10,7 @@ For Management API endpoints, please see the [Node Auth0 SDK](https://github.com
 [![npm](https://img.shields.io/npm/v/passport-auth0)](https://npmjs.org/package/passport-auth0)
 [![npm](https://img.shields.io/npm/dm/passport-auth0)](https://npmjs.org/package/passport-auth0)
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat)](https://opensource.org/licenses/MIT)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fauth0%2Fpassport-auth0.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fauth0%2Fpassport-auth0?ref=badge_shield)
 
 ## Table of Contents
 
@@ -154,3 +155,6 @@ Auth0 helps you to easily:
 ## License
 
 This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fauth0%2Fpassport-auth0.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fauth0%2Fpassport-auth0?ref=badge_large)
