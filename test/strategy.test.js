@@ -198,6 +198,12 @@ describe('auth0 strategy', function () {
       should.exist(extraParams.my_custom_param1);
       should.exist(extraParams.my_custom_param2);
     });
+
+    it('Should be pure', function() {
+      var params = {connection: '123'};
+      this.strategy.authorizationParams(params);
+      should.exist(params.connection);
+    });
   });
 
   describe('authenticate', function () {
