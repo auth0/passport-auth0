@@ -15,19 +15,65 @@ describe('auth0 strategy', function () {
     );
   });
 
-  it('authorizationURL should have the domain', function () {
-    this.strategy.options
-      .authorizationURL.should.eql('https://test.auth0.com/authorize');
-  });
+  describe('options', function() {
+    describe('defaults', function() {
+      it('expectedIssuer should have the domain', function () {
+        this.strategy.options
+        .expectedIssuer.should.eql('https://test.auth0.com/');
+      });
 
-  it('tokenURL should have the domain', function () {
-    this.strategy.options
-      .tokenURL.should.eql('https://test.auth0.com/oauth/token');
-  });
+      it('authorizationURL should have the domain', function () {
+        this.strategy.options
+          .authorizationURL.should.eql('https://test.auth0.com/authorize');
+      });
 
-  it('userInfoURL should have the domain', function () {
-    this.strategy.options
-      .userInfoURL.should.eql('https://test.auth0.com/userinfo');
+      it('tokenURL should have the domain', function () {
+        this.strategy.options
+          .tokenURL.should.eql('https://test.auth0.com/oauth/token');
+      });
+
+      it('userInfoURL should have the domain', function () {
+        this.strategy.options
+          .userInfoURL.should.eql('https://test.auth0.com/userinfo');
+      });
+
+      it('apiURL should have the domain', function () {
+        this.strategy.options
+          .apiUrl.should.eql('https://test.auth0.com/api');
+      });
+    });
+
+    it('should not override options with defaults', function() {
+      const strategy = new Auth0Strategy({
+          domain:       'test.auth0.com',
+          clientID:     'testid',
+          clientSecret: 'testsecret',
+          callbackURL:  '/callback',
+
+          expectedIssuer:   'https://foobar.com/',
+          authorizationURL: 'https://foobar.com/authorize',
+          tokenURL:         'https://foobar.com/oauth/token',
+          userInfoURL:      'https://foobar.com/userinfo',
+          apiUrl:           'https://foobar.com/api'
+        },
+        function(accessToken, idToken, profile, done) {}
+      );
+
+      strategy.options
+        .expectedIssuer.should.eql('https://foobar.com/');
+
+      strategy.options
+        .authorizationURL.should.eql('https://foobar.com/authorize');
+
+      strategy.options
+        .tokenURL.should.eql('https://foobar.com/oauth/token');
+
+      strategy.options
+        .userInfoURL.should.eql('https://foobar.com/userinfo');
+
+      strategy.options
+        .apiUrl.should.eql('https://foobar.com/api');
+    });
   });
 
   it('should include a telemetry header by default', function() {
