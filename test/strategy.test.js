@@ -233,6 +233,23 @@ describe('auth0 strategy', function () {
       var extraParams = this.strategy.authorizationParams({});
       should.not.exist(extraParams.max_age);
     });
+
+    it('should add extra params, if provided', function () {
+      var extraParams = this.strategy.authorizationParams({my_custom_param: true});
+      should.exist(extraParams.my_custom_param);
+    });
+
+    it('should multiple extra params, if provided', function () {
+      var extraParams = this.strategy.authorizationParams({my_custom_param1: true, my_custom_param2: 123});
+      should.exist(extraParams.my_custom_param1);
+      should.exist(extraParams.my_custom_param2);
+    });
+
+    it('Should be pure', function() {
+      var params = {connection: '123'};
+      this.strategy.authorizationParams(params);
+      should.exist(params.connection);
+    });
   });
 
   describe('authenticate', function () {
