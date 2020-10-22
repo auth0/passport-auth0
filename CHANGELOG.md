@@ -1,5 +1,17 @@
 # Change Log
 
+## [v1.4.0](https://github.com/auth0/passport-auth0/tree/v1.4.0) (2020-10-22)
+[Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.4.0...v1.3.3)
+
+**Added**
+Adding support for extra params to authorizeParams [\#131](https://github.com/auth0/passport-auth0/pull/131) ([alexbjorlig](https://github.com/alexbjorlig))
+
+**Security**
+Bump lodash from 4.17.15 to 4.17.20  [\#129](https://github.com/auth0/passport-auth0/pull/129)
+
+**Fixed**
+Fix to not override option values with defaults. [\#127](https://github.com/auth0/passport-auth0/pull/127) ([kierans](https://github.com/alexbjorlig))
+
 ## [v1.3.3](https://github.com/auth0/passport-auth0/tree/v1.3.3) (2020-06-05)
 [Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.3.3...v1.3.2)
 
