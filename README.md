@@ -1,5 +1,6 @@
 # passport-auth0
 
+> :information_source:  **Maintenance Advisory:**  With the release of https://github.com/auth0/express-openid-connect, we will no longer be adding new features to this library, however we will continue to maintain this library and fix issues.  You can read more about the release of our new library at https://auth0.com/blog/auth0-s-express-openid-connect-sdk/
 
 
 This is the [Auth0](https://auth0.com/) authentication strategy for [Passport.js](http://passportjs.org/). Passport is authentication middleware for Node.js that can be unobtrusively dropped into any Express-based web application.
