@@ -17,8 +17,8 @@
     "should": "^7.1.0"
   },
   "dependencies": {
+    "got": "^11.8.2",
     "passport-oauth": "^1.0.0",
-    "passport-oauth2": "^1.6.0",
-    "request": "^2.88.2"
+    "passport-oauth2": "^1.6.0"
   }
 }
