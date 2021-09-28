@@ -10,6 +10,15 @@ workflows:
       - test:
           name: test_node8
           v: "8"
+      - test:
+          name: test_node12
+          v: "12"
+      - test:
+          name: test_node14
+          v: "14"
+      - test:
+          name: test_node16
+          v: "16"
 jobs:
   test:
     parameters:
