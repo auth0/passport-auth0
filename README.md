@@ -7,7 +7,7 @@ This is the [Auth0](https://auth0.com/) authentication strategy for [Passport.js
 
 For Management API endpoints, please see the [Node Auth0 SDK](https://github.com/auth0/node-auth0).
 
-[![Build Status](https://app.circleci.com/pipelines/github/auth0/passport-auth0)](https://app.circleci.com/pipelines/github/auth0/passport-auth0)
+[![Build Status](https://circleci.com/gh/auth0/passport-auth0/tree/master.svg?style=svg)](https://circleci.com/gh/auth0/passport-auth0/tree/master)
 [![npm](https://img.shields.io/npm/v/passport-auth0)](https://npmjs.org/package/passport-auth0)
 [![npm](https://img.shields.io/npm/dm/passport-auth0)](https://npmjs.org/package/passport-auth0)
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat)](https://opensource.org/licenses/MIT)
