@@ -1,6 +1,12 @@
 # Change Log
 
-## [v1.4.1](https://github.com/auth0/passport-auth0/tree/v1.4.1) (2020-10-22)
+## [v1.4.2](https://github.com/auth0/passport-auth0/tree/v1.4.2) (2022-01-19)
+[Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.4.2...v1.4.1)
+
+**Fixed**
+Upgrade axios from 0.21.4 to 0.22.0  [\#149](https://github.com/auth0/passport-auth0/pull/149) ([snyk-bot](https://github.com/snyk-bot))
+
+## [v1.4.1](https://github.com/auth0/passport-auth0/tree/v1.4.1) (2021-10-13)
 [Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.4.1...v1.4.0)
 
 **Changed**
