@@ -17,7 +17,7 @@
     "should": "^7.1.0"
   },
   "dependencies": {
-    "axios": "^0.25.0",
+    "axios": "^0.26.0",
     "passport-oauth": "^1.0.0",
     "passport-oauth2": "^1.6.0"
   }
