@@ -1,5 +1,11 @@
 # Change Log
 
+## [v1.4.3](https://github.com/auth0/passport-auth0/tree/v1.4.3) (2022-08-16)
+[Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.4.2...v1.4.3)
+
+**Fixed**
+- Add missing commas so that "use strict" works [\#161](https://github.com/auth0/passport-auth0/pull/161) ([jimrandomh](https://github.com/jimrandomh))
+
 ## [v1.4.2](https://github.com/auth0/passport-auth0/tree/v1.4.2) (2022-01-19)
 [Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.4.2...v1.4.1)
 
