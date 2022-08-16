@@ -36,7 +36,9 @@ You can also see fully working demos using this library in our [Auth0 blog](http
 
 The Auth0 Passport strategy is installed with npm. 
 
-    npm install passport-auth0
+```
+npm install passport-auth0
+```
 
 ## Customization
 
