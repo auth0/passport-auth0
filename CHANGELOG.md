@@ -1,5 +1,9 @@
 # Change Log
 
+- Removed deprecated `_getAccessToken`
+- Removed axios dependency
+- Converted prototyped to classes
+
 ## [v1.4.3](https://github.com/auth0/passport-auth0/tree/v1.4.3) (2022-08-16)
 [Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.4.2...v1.4.3)
 
