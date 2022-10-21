@@ -1,8 +1,5 @@
 # passport-auth0
 
-
-
-
 The [Auth0](https://auth0.com/) authentication strategy for [Passport.js](http://passportjs.org/), an authentication middleware for Node.js that can be unobtrusively dropped into any Express-based web application.
 
 [![Release](https://img.shields.io/npm/v/passport-auth0)](https://npmjs.org/package/passport-auth0)
@@ -142,9 +139,9 @@ Please do not report security vulnerabilities on the public GitHub issue tracker
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: light)" srcset="./auth0_light_mode.png"   width="150">
-    <source media="(prefers-color-scheme: dark)" srcset="./auth0_dark_mode.png" width="150">
-    <img alt="Auth0 Logo" src="./auth0_light_mode.png" width="150">
+    <source media="(prefers-color-scheme: light)" srcset="https://cdn.auth0.com/website/sdks/logos/auth0_light_mode.png"   width="150">
+    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.auth0.com/website/sdks/logos/auth0_dark_mode.png" width="150">
+    <img alt="Auth0 Logo" src="https://cdn.auth0.com/website/sdks/logos/auth0_light_mode.png" width="150">
   </picture>
 </p>
 <p align="center">Auth0 is an easy to implement, adaptable authentication and authorization platform. To learn more checkout <a href="https://auth0.com/why-auth0">Why Auth0?</a></p>
