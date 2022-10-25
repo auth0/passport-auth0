@@ -1,4 +1,4 @@
-# passport-auth0
+![Auth0 authentication strategy for Passport.js](https://cdn.auth0.com/website/sdks/banners/passport-auth0-banner.png)
 
 The [Auth0](https://auth0.com/) authentication strategy for [Passport.js](http://passportjs.org/), an authentication middleware for Node.js that can be unobtrusively dropped into any Express-based web application.
 
