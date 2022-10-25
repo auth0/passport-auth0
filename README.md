@@ -1,38 +1,23 @@
-# passport-auth0
+![Auth0 authentication strategy for Passport.js](https://cdn.auth0.com/website/sdks/banners/passport-auth0-banner.png)
 
-> :information_source:  **Maintenance Advisory:**  With the release of https://github.com/auth0/express-openid-connect, we will no longer be adding new features to this library, however we will continue to maintain this library and fix issues.  You can read more about the release of our new library at https://auth0.com/blog/auth0-s-express-openid-connect-sdk/
+The [Auth0](https://auth0.com/) authentication strategy for [Passport.js](http://passportjs.org/), an authentication middleware for Node.js that can be unobtrusively dropped into any Express-based web application.
 
-
-This is the [Auth0](https://auth0.com/) authentication strategy for [Passport.js](http://passportjs.org/). Passport is authentication middleware for Node.js that can be unobtrusively dropped into any Express-based web application.
-
-For Management API endpoints, please see the [Node Auth0 SDK](https://github.com/auth0/node-auth0).
-
-[![Build Status](https://circleci.com/gh/auth0/passport-auth0/tree/master.svg?style=svg)](https://circleci.com/gh/auth0/passport-auth0/tree/master)
-[![npm](https://img.shields.io/npm/v/passport-auth0)](https://npmjs.org/package/passport-auth0)
+[![Release](https://img.shields.io/npm/v/passport-auth0)](https://npmjs.org/package/passport-auth0)
 [![npm](https://img.shields.io/npm/dm/passport-auth0)](https://npmjs.org/package/passport-auth0)
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat)](https://opensource.org/licenses/MIT)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fauth0%2Fpassport-auth0.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fauth0%2Fpassport-auth0?ref=badge_shield)
+[![License](https://img.shields.io/:license-MIT-blue.svg?style=flat)](https://opensource.org/licenses/MIT)
+[![CircleCI](https://img.shields.io/circleci/build/github/auth0/passport-auth0)](https://circleci.com/gh/auth0/passport-auth0)
 
-## Table of Contents
-
-- [Documentation](#documentation)
-- [Installation](#installation)
-- [Customization](#customization)
-- [Support + Feedback](#support--feedback)
-- [Vulnerability Reporting](#vulnerability-reporting)
-- [What is Auth0](#what-is-auth0)
-- [License](#license)
+:books: [Documentation](#documentation) - :rocket: [Getting Started](#getting-started) - :speech_balloon: [Feedback](#feedback)
 
 ## Documentation
 
-Full documentation with examples can be found in the [Node.js Quickstart](https://auth0.com/docs/quickstart/webapp/nodejs). 
+- [Docs site](https://www.auth0.com/docs) - explore our docs site and learn more about Auth0.
 
-You can also see fully working demos using this library in our [Auth0 blog](https://auth0.com/blog/):
 
-* [Build and Authenticate a Node.js App with JSON Web Tokens](https://auth0.com/blog/building-and-authenticating-nodejs-apps/#nodejs-directory-structure)
-* [Developing a Real-Time, Collaborative Editor with Pusher](https://auth0.com/blog/developing-a-real-time-collaborative-editor-with-pusher/)
+## Getting started
+> :information_source:  **Maintenance Advisory:**  With the release of https://github.com/auth0/express-openid-connect, we will no longer be adding new features to this library, however we will continue to maintain this library and fix issues.  You can read more about the release of our new library at https://auth0.com/blog/auth0-s-express-openid-connect-sdk/
 
-## Installation
+### Installation
 
 The Auth0 Passport strategy is installed with npm. 
 
@@ -40,9 +25,9 @@ The Auth0 Passport strategy is installed with npm.
 npm install passport-auth0
 ```
 
-## Customization
+### Customization
 
-### State parameter
+#### State parameter
 
 The Auth0 Passport strategy enforces the use of the `state` parameter in OAuth 2.0 [authorization requests](https://tools.ietf.org/html/rfc6749#section-4.1.1) and requires session support in Express to be enabled.
 
@@ -62,7 +47,7 @@ const strategy = new Auth0Strategy({
 
 [More on state handling here](https://github.com/auth0/passport-auth0/issues/40#issuecomment-511592801).
 
-### Scopes
+#### Scopes
 
 If you want to change the scope of the ID token provided, add a `scope` property to the authenticate configuration passed when defining the route. These must be [OIDC standard scopes](https://auth0.com/docs/scopes/current/oidc-scopes). If you need data outside of the standard scopes, you can add [custom claims](https://auth0.com/docs/scopes/current/custom-claims) to the token.
 
@@ -76,7 +61,7 @@ app.get(
 );
 ```
 
-### Force a Specific IdP
+#### Force a Specific IdP
 
 If you want to force a specific identity provider you can use:
 
@@ -105,7 +90,7 @@ app.get(
 );
 ```
 
-### Getting Access Tokens
+#### Getting Access Tokens
 
 If you want to specify an audience for the returned `access_token` you can:
 
@@ -119,7 +104,7 @@ app.get(
 );
 ```
 
-### Silent Authentication
+#### Silent Authentication
 
 If you want to check authentication without showing a prompt:
 
@@ -133,31 +118,33 @@ app.get(
 );
 ```
 
-## Support + Feedback
+## Feedback
 
-- Use [Issues](https://github.com/auth0/passport-auth0/issues) for code-level support
-- Use our [Community](https://community.auth0.com/) for usage, questions, specific cases
+### Contributing
 
-## Vulnerability Reporting
+We appreciate feedback and contribution to this repo! Before you get started, please see the following:
 
-Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
+- [Auth0's general contribution guidelines](https://github.com/auth0/open-source-template/blob/master/GENERAL-CONTRIBUTING.md)
+- [Auth0's code of conduct guidelines](https://github.com/auth0/open-source-template/blob/master/CODE-OF-CONDUCT.md)
 
-## What is Auth0?
+### Raise an issue
 
-Auth0 helps you to easily:
+To provide feedback or report a bug, please [raise an issue on our issue tracker](https://github.com/auth0/passport-auth0/issues).
 
-- implement authentication with multiple identity providers, including social (e.g., Google, Facebook, Microsoft, LinkedIn, GitHub, Twitter, etc), or enterprise (e.g., Windows Azure AD, Google Apps, Active Directory, ADFS, SAML, etc.)
-- log in users with username/password databases, passwordless, or multi-factor authentication
-- link multiple user accounts together
-- generate signed JSON Web Tokens to authorize your API calls and flow the user identity securely
-- access demographics and analytics detailing how, when, and where users are logging in
-- enrich user profiles from other data sources using customizable JavaScript rules
+### Vulnerability Reporting
 
-[Why Auth0?](https://auth0.com/why-auth0)
+Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/responsible-disclosure-policy) details the procedure for disclosing security issues.
 
-## License
+---
 
-This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="https://cdn.auth0.com/website/sdks/logos/auth0_light_mode.png"   width="150">
+    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.auth0.com/website/sdks/logos/auth0_dark_mode.png" width="150">
+    <img alt="Auth0 Logo" src="https://cdn.auth0.com/website/sdks/logos/auth0_light_mode.png" width="150">
+  </picture>
+</p>
+<p align="center">Auth0 is an easy to implement, adaptable authentication and authorization platform. To learn more checkout <a href="https://auth0.com/why-auth0">Why Auth0?</a></p>
+<p align="center">
+This project is licensed under the MIT license. See the <a href="./LICENSE"> LICENSE</a> file for more info.</p>
 
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fauth0%2Fpassport-auth0.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fauth0%2Fpassport-auth0?ref=badge_large)
