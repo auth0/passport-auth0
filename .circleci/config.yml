@@ -15,7 +15,7 @@ workflows:
           v: "16"
       - test:
           name: test_node18
-          v: "18"
+          v: "lts"
 jobs:
   test:
     parameters:
