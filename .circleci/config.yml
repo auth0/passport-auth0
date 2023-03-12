@@ -14,7 +14,7 @@ workflows:
           name: test_node16
           v: "16"
       - test:
-          name: test_node16
+          name: test_node18
           v: "18"
 jobs:
   test:
