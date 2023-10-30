@@ -104,6 +104,6 @@ jobs:
         run: npm ci
 
       - name: Publish release to NPM
-        run: npm publish --provenance --tag ${{ needs.configure.outputs.vtag }} ${{ needs.configure.outputs.dry-run }}
+        run: npm publish --provenance ${{ needs.configure.outputs.dry-run }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
