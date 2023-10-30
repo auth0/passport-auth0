@@ -1,5 +1,11 @@
 # Change Log
 
+## [v1.4.4](https://github.com/auth0/passport-auth0/tree/v1.4.4) (2023-10-30)
+[Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.4.3...v1.4.4)
+
+**Security**
+- bump axios to latest version [\#176](https://github.com/auth0/passport-auth0/pull/176) ([frederikprijck](https://github.com/frederikprijck))
+
 ## [v1.4.3](https://github.com/auth0/passport-auth0/tree/v1.4.3) (2022-08-16)
 [Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.4.2...v1.4.3)
 
