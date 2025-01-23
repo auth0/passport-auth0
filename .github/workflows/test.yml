@@ -61,4 +61,4 @@ jobs:
 
       - run: npm run test
 
-      - uses: codecov/codecov-action@ab904c41d6ece82784817410c45d8b8c02684457 # pin@3.1.6
+      - uses: codecov/codecov-action@0da7aa657d958d32c117fc47e1f977e7524753c7 # pin@5.3.0
