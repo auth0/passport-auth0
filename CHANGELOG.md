@@ -1,5 +1,16 @@
 # Change Log
 
+## [v1.4.5](https://github.com/auth0/passport-auth0/tree/v1.4.5) (2025-10-30)
+[Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.4.4...v1.4.5)
+
+**Security**
+- Bump serialize-javascript and mocha [\#208](https://github.com/auth0/passport-auth0/pull/208) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump axios from 1.7.4 to 1.12.0 [\#207](https://github.com/auth0/passport-auth0/pull/207) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump form-data from 4.0.0 to 4.0.4 [\#206](https://github.com/auth0/passport-auth0/pull/206) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump braces from 3.0.2 to 3.0.3 [\#191](https://github.com/auth0/passport-auth0/pull/191) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump follow-redirects from 1.15.5 to 1.15.6 [\#190](https://github.com/auth0/passport-auth0/pull/190) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump follow-redirects from 1.15.0 to 1.15.4 [\#183](https://github.com/auth0/passport-auth0/pull/183) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.4.4](https://github.com/auth0/passport-auth0/tree/v1.4.4) (2023-10-30)
 [Full Changelog](https://github.com/auth0/passport-auth0/compare/v1.4.3...v1.4.4)
 
