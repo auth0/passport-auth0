@@ -6,6 +6,7 @@ The [Auth0](https://auth0.com/) authentication strategy for [Passport.js](http:/
 [![npm](https://img.shields.io/npm/dm/passport-auth0)](https://npmjs.org/package/passport-auth0)
 [![License](https://img.shields.io/:license-MIT-blue.svg?style=flat)](https://opensource.org/licenses/MIT)
 [![CircleCI](https://img.shields.io/circleci/build/github/auth0/passport-auth0)](https://circleci.com/gh/auth0/passport-auth0)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/auth0/passport-auth0)
 
 :books: [Documentation](#documentation) - :rocket: [Getting Started](#getting-started) - :speech_balloon: [Feedback](#feedback)
 
@@ -147,4 +148,3 @@ Please do not report security vulnerabilities on the public GitHub issue tracker
 <p align="center">Auth0 is an easy to implement, adaptable authentication and authorization platform. To learn more checkout <a href="https://auth0.com/why-auth0">Why Auth0?</a></p>
 <p align="center">
 This project is licensed under the MIT license. See the <a href="./LICENSE"> LICENSE</a> file for more info.</p>
-
