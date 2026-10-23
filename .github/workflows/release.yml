@@ -15,7 +15,28 @@ permissions:
 ### TODO: Also remove `npm-release` workflow from this repo's .github/workflows folder once the repo is public.
 
 jobs:
+  get-version:
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.pull_request.merged && startsWith(github.event.pull_request.head.ref, 'release/'))
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.get_version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - id: get_version
+        uses: ./.github/actions/get-version
+
+  rl-scan:
+    needs: get-version
+    uses: ./.github/workflows/rl.yml
+    with:
+      artifact-name: passport-auth0
+      artifact-path: passport-auth0.tgz
+      version: ${{ needs.get-version.outputs.version }}
+    secrets: inherit
+
   release:
+    needs: rl-scan
     uses: ./.github/workflows/npm-release.yml
     with:
       node-version: 18
