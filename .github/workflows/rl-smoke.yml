@@ -1,0 +1,20 @@
+name: RL Scan smoke test
+
+# Temporary: exercises rl.yml on this PR. Remove before merge.
+
+on:
+  pull_request:
+    branches: ['master']
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  rl-scan:
+    uses: ./.github/workflows/rl.yml
+    with:
+      artifact-name: passport-auth0
+      artifact-path: passport-auth0.tgz
+      version: smoke-${{ github.event.pull_request.number }}
+    secrets: inherit
