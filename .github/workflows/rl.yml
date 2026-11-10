@@ -1,0 +1,111 @@
+name: RL Scan
+run-name: rl-scan
+
+# Reusable malware-scan workflow — call this from your release or CI pipeline via
+# workflow_call. Called from release.yml, which gates npm publish on this scan.
+#
+# Caller pattern (minimal):
+#   jobs:
+#     release-and-scan:
+#       uses: ./.github/workflows/rl.yml
+#       with:
+#         artifact-name: my-artifact
+#         artifact-path: dist/my-artifact.tgz
+#         version: ${{ github.event.release.tag_name }}
+#       secrets: inherit
+#
+# Artifact contract
+# ─────────────────
+# artifact-path MUST be a concrete file path — the action's internal existence
+# check uses [ -f ], which does NOT expand globs. A missing artifact fails the job.
+#
+# Required org secrets (configured at org level in auth0/):
+#   RLSECURE_LICENSE            — ReversingLabs license key
+#   RLSECURE_SITE_KEY           — ReversingLabs site key
+#   SIGNAL_HANDLER_TOKEN        — scan-service telemetry auth
+#   SIGNAL_HANDLER_DOMAIN       — scan-service endpoint domain
+#   PRODSEC_TOOLS_ARN           — AWS role ARN for ProdSec tools
+#   PRODSEC_TOOLS_USER          — ProdSec Python tools repo user
+#   PRODSEC_TOOLS_TOKEN         — ProdSec Python tools repo token
+#   PRODSEC_PYTHON_TOOLS_REPO   — ProdSec Python tools repo URL
+
+on:
+  workflow_call:
+    inputs:
+      artifact-name:
+        description: Name assigned to the artifact (used for RL reporting)
+        type: string
+        required: true
+      artifact-path:
+        description: Concrete file path of the built artifact on the runner — no globs
+        type: string
+        required: true
+      version:
+        description: Version string for the artifact (e.g. release tag)
+        type: string
+        required: true
+    secrets:
+      RLSECURE_LICENSE:
+        required: true
+      RLSECURE_SITE_KEY:
+        required: true
+      SIGNAL_HANDLER_TOKEN:
+        required: true
+      SIGNAL_HANDLER_DOMAIN:
+        required: true
+      PRODSEC_TOOLS_ARN:
+        required: true
+      PRODSEC_TOOLS_USER:
+        required: true
+      PRODSEC_TOOLS_TOKEN:
+        required: true
+      PRODSEC_PYTHON_TOOLS_REPO:
+        required: true
+
+jobs:
+  # ── Malware scan via ReversingLabs composite action ─────────────────────────
+  rl-scan:
+    name: RL Scan
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write   # required for AWS OIDC federation (PRODSEC_TOOLS_ARN)
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # No build step: the package ships lib/ as-is, so the npm tarball is the artifact.
+      - name: Build artifact
+        env:
+          ARTIFACT_PATH: ${{ inputs.artifact-path }}
+        run: mv "$(npm pack --silent)" "$ARTIFACT_PATH"
+
+      - name: Run RL malware scan
+        id: rl-scan-conclusion
+        uses: auth0/devsecops-tooling/.github/actions/rl-scan@e29f26478db18ff0bcbe4bc447a8fbd54fbeec9e
+        with:
+          # ── Artifact inputs ─────────────────────────────────────────────────
+          artifact-name: ${{ inputs.artifact-name }}
+          artifact-path: ${{ inputs.artifact-path }}
+          version: ${{ inputs.version }}
+          # ── Required secrets ────────────────────────────────────────────────
+          RLSECURE_LICENSE:          ${{ secrets.RLSECURE_LICENSE }}
+          RLSECURE_SITE_KEY:         ${{ secrets.RLSECURE_SITE_KEY }}
+          SIGNAL_HANDLER_TOKEN:      ${{ secrets.SIGNAL_HANDLER_TOKEN }}
+          SIGNAL_HANDLER_DOMAIN:     ${{ secrets.SIGNAL_HANDLER_DOMAIN }}
+          PRODSEC_TOOLS_ARN:         ${{ secrets.PRODSEC_TOOLS_ARN }}
+          PRODSEC_TOOLS_USER:        ${{ secrets.PRODSEC_TOOLS_USER }}
+          PRODSEC_TOOLS_TOKEN:       ${{ secrets.PRODSEC_TOOLS_TOKEN }}
+          PRODSEC_PYTHON_TOOLS_REPO: ${{ secrets.PRODSEC_PYTHON_TOOLS_REPO }}
+
+      - name: Gate on scan result
+        if: always()
+        env:
+          SCAN_STATUS: ${{ steps.rl-scan-conclusion.outputs.scan-status }}
+        run: |
+          if [ "$SCAN_STATUS" != "success" ]; then
+            echo "::error title=Malware::RL scan did not pass (status: ${SCAN_STATUS:-none})"
+            exit 1
+          fi
