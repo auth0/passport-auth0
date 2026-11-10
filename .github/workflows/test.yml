@@ -28,14 +28,14 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - uses: ./.github/actions/build
         with:
           node: ${{ env.NODE_VERSION }}
 
       - name: Save build artifacts
-        uses: actions/cache/save@v5
+        uses: actions/cache/save@v6
         with:
           path: .
           key: ${{ env.CACHE_KEY }}
@@ -47,18 +47,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      - uses: actions/cache/restore@v5
+      - uses: actions/cache/restore@v6
         with:
           path: .
           key: ${{ env.CACHE_KEY }}
 
       - run: npm run test
 
-      - uses: codecov/codecov-action@fb8b3582c8e4def4969c97caa2f19720cb33a72f # pin@7.0.0
+      - uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # pin@7.1.1
