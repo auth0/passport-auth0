@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/auth0/passport-auth0"
+    "url": "https://github.com/auth0/passport-auth0"
   },
   "license": "MIT",
   "devDependencies": {
